@@ -1,42 +1,31 @@
 {
   "name": "portfolio",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.0.0",
+  "description": "Portfolio page code.",
+  "main": "index.js",
   "dependencies": {
-    "@testing-library/jest-dom": "^5.11.10",
-    "@testing-library/react": "^11.2.6",
-    "@testing-library/user-event": "^12.8.3",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-scripts": "4.0.3",
-    "web-vitals": "^1.1.1"
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "build:prod": "rm -rf build && npm run build --prod ",
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "build:prod": "cd react-ui && rm -rf build && npm run build --prod",
     "deploy": "git push heroku master",
-    "deploy:full": "npm run build:prod && git add . && git commit -m UIbuild && git push && npm run deploy",
+    "deploy:full": "npm run build:prod && cd .. && git add . && git commit -m UIbuild && git push && npm run deploy",
     "logs:prod": "heroku logs --tail"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KrrisH-13/portfolio.git"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+  "author": "Krishna Kumar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KrrisH-13/portfolio/issues"
+  },
+  "homepage": "https://github.com/KrrisH-13/portfolio#readme"
 }
